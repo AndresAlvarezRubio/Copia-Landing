@@ -384,9 +384,9 @@ span svg {
 #prices article {
     width: 100%;
     background-color: white;
-    border: 1px solid #f1f1f1;
+    border: 1px solid #eee;
     border-radius: 10px;
-    padding: 30px;
+    padding: 50px 30px 70px;
 }
 #prices picture {
     display: block;
@@ -395,6 +395,7 @@ span svg {
     text-align: center;
     background: #f1f1f1;
     max-width: 100%;
+    padding: 40px 20px;
 }
 #prices picture img {
     max-width: 100%;
