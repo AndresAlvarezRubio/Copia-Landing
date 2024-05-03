@@ -1,0 +1,463 @@
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body, .button a {
+    font-family: "Ubuntu", sans-serif;
+}
+.button {
+    margin-top: 30px;
+}
+h1,h2,h3 {
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 24px;
+    line-height: 36px;
+}
+h3 {
+    font-size: 18px;
+    line-height: 30px;
+}
+p {
+    font-size: 14px;
+    line-height: 20px;
+    color: black;
+    opacity: .6;
+}
+@media (min-width:1024px) {
+    h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+    h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333333;
+    z-index: 999;
+
+}
+.header_width,#feature,#chapters,#reviews,#prices {
+    padding: 10px 20px;
+    max-width: 1240px;
+    margin: auto;
+    
+}
+.header_width {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+}
+header .hamburguer {
+    height: 50px;
+    width: 50px;
+    transition-duration: .3s;
+}
+header .hamburguer::after,header .hamburguer::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(50% + 5px);
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30px;
+    height: 2px;
+    background-color: #49b970;
+    transition-duration: .3s;
+}
+header .hamburguer:hover::after,header .hamburguer:hover::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+    top: 50%;
+    background-color: #2d6340;
+}
+header .hamburguer:hover::before {
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+header .hamburguer:hover~.menu {
+    top: 100%;
+    transition-duration: 1s;
+}
+header .hamburguer::before {
+    top: calc(50% - 5px);
+}
+header .logo img {
+    height: 34px;
+}
+header .logo a, header .menu nav ul,header .menu nav {
+    display: block;
+    height: 100%;
+}
+header .logo a {
+    display: flex;
+    align-items: center;
+}
+.logo,.hamburguer {
+    z-index: 2;
+}
+header .menu{
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: -400%;
+    left: 0;
+    background-color: #333;
+    transition-duration: .3s;
+}
+header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background: #333;
+    top: 0px;
+    left: 0;
+    z-index: 1;
+}
+.menu a {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+}
+header .menu nav ul {
+    padding: 10px;
+}
+@media (min-width: 1024px) {
+    .hamburguer {
+        display: none;
+    }
+    header .menu {
+        position: relative;
+        width: fit-content;
+        top: initial;
+        z-index: 2;
+    }
+    header .menu nav ul {
+        display: flex;
+    }
+}
+
+/* First-block */
+#home {
+    padding: 120px 20px 0;
+    background-color: #333;
+    color: white;
+}
+#home section>div {
+    padding-bottom: 50px;
+}
+#home section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 350px;
+    margin: auto;
+    z-index: 1;
+}
+#home::after {
+    content: "";
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: white;
+    z-index: 0;
+}
+#home picture {
+    display: block;
+    width: 100%;
+}
+#home section p {
+    color: white;
+    opacity: .6;
+    font-size: 14px;
+    margin-bottom: 47px;
+}
+picture img {
+    width: 100%;
+    max-width: 400px; 
+}
+.button a {
+    padding: 15px 50px;
+    border-radius: 50px;
+    background-color:#49b970;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+.button:hover a{
+    background-color: #2d6340;
+}
+@media (min-width: 768px) {
+    #home section {
+        flex-direction: row;
+        max-width: 720px;
+        gap: 30px;
+    }
+    #home::after { 
+        display: block;
+        height: 70px;
+    }
+}
+
+/*Second block*/
+#feature {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    margin: 50px auto 70px;
+    text-align: center;
+}
+#feature::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(100% - 40px);
+    max-width: 1240px;
+    bottom: -40px;
+    height: 1px;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: rgba(0, 0, 0, .1);
+}
+#feature article, #feature div{
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+span svg {
+    width: 40px;
+    height: 40px;
+    fill: #49b970;
+}
+#feature article span,#feature article h3  {
+    display: block;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 1024px) {
+    #feature article{
+        width: calc(33% - 60px);
+    }
+    #feature div {
+        max-width: 900px;
+        padding: 0 200px 30px;
+    }
+}
+
+/*Third block*/
+
+#chapters picture {
+    display: block;
+}
+#chapters {
+    max-width: 600px;
+}
+#chapters picture img {
+    max-width: 100%;
+}
+#chapters section>div {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    gap: 20px;
+    transition-duration: .2s
+}
+#chapters section>div:hover {
+    transform: translate(0px,-5px);
+}
+#chapters section>p {
+    margin-bottom: 20px;
+}
+#chapters .title-content {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+@media (min-width:1024px) {
+    #chapters {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-width: 1240px;
+    }
+}
+
+/* Fourth Block*/
+#author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    background: #f1f1f1;
+}
+#author div {
+    padding: 50px;
+}
+#author picture img {
+    max-width: 100%;
+    display: block;
+}
+#author div picture {
+    display: block;
+    width: 90px;
+    height: auto;
+    margin-top: 30px;
+}
+@media (min-width: 768px) {
+    #author {
+        flex-direction: row;
+    }
+    #author picture, #author div {
+        width: 50%;
+        max-height: 500px;
+        overflow: hidden;
+    }
+    #author div {
+        padding: 30px;
+    }
+}
+
+/*Fifth Block*/
+#reviews {
+    padding: 0;
+    text-align: center;
+}
+#reviews div {
+    display: flex;
+    max-width: 100%;
+    overflow: scroll;
+}
+#reviews div::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+#reviews div article {
+    min-width: 380px;
+    padding: 20px;
+}
+#reviews div article p {
+    margin: 7px 0 15px;
+    font-style: italic;
+}
+#reviews div article span p {
+    font-style: normal;
+}
+#reviews div article span p:first-child {
+    font-weight: bold;
+    font-size: 16px;
+}
+@media (min-width: 1024px) {
+    #reviews div {
+        flex-wrap: wrap;
+    }
+    #reviews div article {
+        width: 25%;
+        min-width: initial;
+    }
+}
+
+
+/*Prices*/
+#prices article {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    padding: 30px;
+}
+#prices picture {
+    display: block;
+}
+#prices {
+    text-align: center;
+    background: #f1f1f1;
+    max-width: 100%;
+}
+#prices picture img {
+    max-width: 100%;
+}
+#prices>div {
+    padding: 10px 0;
+    gap: 20px;
+    transition-duration: .2s;
+    margin-bottom: 30px;
+}
+#prices section>div:hover {
+    transform: translate(0px,-5px);
+}
+#prices section>p {
+    margin-bottom: 20px;
+}
+#prices .title-content {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#prices .prices-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1240px;
+    gap: 30px;
+    margin: auto;
+}
+.price {
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: bold;
+}
+.price span {
+    font-size: 24px;
+}
+@media (min-width:1024px) {
+    #prices .prices-contents {
+        flex-direction: row;
+    }
+}
+
+
+/*Download*/
+#download {
+    padding: 80px;
+    text-align: center;
+    background: rgb(70, 70, 70);
+    color: white;
+}
+#download p {
+    color: white;
+}
+#download div {
+    max-width: 500px;
+    margin: auto;
+}
+#download .button {
+    margin-top: 30px;
+}
+
+/*Footer*/
+footer {
+    text-align: center;
+    padding: 20px;
+}
